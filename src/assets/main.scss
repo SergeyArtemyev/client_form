@@ -1,0 +1,96 @@
+@import './variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: $main-background;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.4;
+}
+
+.is-invalid {
+  & + p {
+    margin-top: 0.2rem;
+    font-size: 0.8rem;
+    color: red;
+  }
+
+  &.form-control {
+    border-color: red !important;
+  }
+}
+#clients::-webkit-scrollbar {
+  appearance: none;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.row {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.form-container.hide {
+  display: none;
+}
+
+form {
+  background-color: $form-background;
+  width: 1000px;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 0 9px 2px #dadada;
+
+  %input-fields {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 0.4rem;
+    font-size: 0.9rem;
+  }
+
+  .form-group {
+    margin-bottom: 0.4rem;
+    margin-right: 2rem;
+    width: 300px;
+
+    label {
+      display: block;
+    }
+
+    .form-control {
+      @extend %input-fields;
+    }
+
+    textarea {
+      width: 250px;
+      height: 70px;
+    }
+    input[type='checkbox'] + label {
+      display: inline-block;
+    }
+  }
+
+  .sex {
+    p {
+      margin: 0;
+    }
+    .form-group {
+      display: flex;
+      margin: 0;
+    }
+  }
+
+  input[type='submit'] {
+    @extend %input-fields;
+    width: 100%;
+    cursor: pointer;
+
+    &:hover {
+      background: #ddd;
+    }
+  }
+}

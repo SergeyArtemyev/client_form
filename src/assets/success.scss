@@ -1,0 +1,33 @@
+.modal {
+  display: none;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 9px 2px #dadada;
+  margin-top: 2rem;
+
+  p {
+    margin-top: 0;
+    font-size: 2rem;
+  }
+
+  .modal-footer {
+    text-align: center;
+
+    button {
+      padding: 0.8rem 0.9rem;
+      border-radius: 15px;
+      border: 0;
+      box-shadow: 0 0 3px 1px #ccc;
+      cursor: pointer;
+
+      &:hover {
+        box-shadow: 0 0 3px 2px #ccc;
+      }
+    }
+  }
+}
+
+.modal.show {
+  display: block;
+}
