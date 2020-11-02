@@ -1,13 +1,15 @@
 @import './variables.scss';
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   background-color: $main-background;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   line-height: 1.4;
+  margin: 0;
 }
 
 .is-invalid {
@@ -40,7 +42,8 @@ h2 {
 
 form {
   background-color: $form-background;
-  width: 1000px;
+  width: 60%;
+  margin: 0 auto;
   padding: 1rem;
   border-radius: 15px;
   box-shadow: 0 0 9px 2px #dadada;
@@ -54,7 +57,7 @@ form {
 
   .form-group {
     margin-bottom: 0.4rem;
-    margin-right: 2rem;
+    margin-right: 1.5rem;
     width: 300px;
 
     label {
@@ -71,6 +74,10 @@ form {
     }
     input[type='checkbox'] + label {
       display: inline-block;
+    }
+
+    #notification {
+      margin-top: 2rem;
     }
   }
 

@@ -37,45 +37,51 @@
           <!-- Пол -->
           <div class="sex">
             <p>Пол</p>
-            <div class="form-group">
-              <input v-model="form.sex" type="radio" value="male" id="male">
-              <label for="male">Мужчина</label>
-            </div>
-            <div class="form-group">
-              <input v-model="form.sex" type="radio" value="female" id="female">
-              <label for="female">Женщина</label>
+            <div>
+              <div class="form-group">
+                <input v-model="form.sex" type="radio" value="male" id="male">
+                <label for="male">Мужчина</label>
+              </div>
+              <div class="form-group">
+                <input v-model="form.sex" type="radio" value="female" id="female">
+                <label for="female">Женщина</label>
+              </div>
             </div>
           </div>
         </div>
         <div class="row">
           <!-- Группа клиентов -->
-          <div class="form-group">
-            <label for="clients">Группа клиентов*</label>
-            <select v-model="form.client" multiple :class="$v.form.client.$error ? 'is-invalid' : ''" id="clients" class="form-control">
-              <option 
-              v-for="(client, index) in clients"
-              :value="client.value"
-              :key="index">
-                {{  client.label  }}
-              </option>
-            </select>
-            <p v-if="$v.form.client.$dirty && !$v.form.client.required">Обязательное поле</p>
-          </div>
+          <div class="selects">
+            <div class="form-group">
+              <label for="clients">Группа клиентов*</label>
+              <select v-model="form.client" multiple :class="$v.form.client.$error ? 'is-invalid' : ''" id="clients" class="form-control">
+                <option 
+                v-for="(client, index) in clients"
+                :value="client.value"
+                :key="index">
+                  {{  client.label  }}
+                </option>
+              </select>
+              <p v-if="$v.form.client.$dirty && !$v.form.client.required">Обязательное поле</p>
+            </div>
           <!-- Лечащий врач -->
-          <div class="form-group">
-            <label for="doctor">Лечащий врач</label>
-            <select v-model="form.doctor" id="doctor" class="form-control">
-              <option 
-              v-for="(doctor, index) in doctors"
-              :value="doctor.value"
-              :key="index">
-                {{  doctor.label  }}
-              </option>
-            </select>
+            <div class="form-group">
+              <label for="doctor">Лечащий врач</label>
+              <select v-model="form.doctor" id="doctor" class="form-control">
+                <option 
+                v-for="(doctor, index) in doctors"
+                :value="doctor.value"
+                :key="index">
+                  {{  doctor.label  }}
+                </option>
+              </select>
+            </div>
           </div>
           <div class="form-group">
-            <input v-model="form.agreeSms" type="checkbox" id="notification">
-            <label for="notification">Отправлять СМС</label>
+            <label for="notification">
+              <input v-model="form.agreeSms" type="checkbox" id="notification">
+              Отправлять СМС
+            </label>
           </div>
         </div>
         <hr>
@@ -275,4 +281,5 @@ export default {
 
 <style lang='scss' scoped>
   @import '@/assets/main.scss';
+  @import '@/assets/media.scss';
 </style>

@@ -6,6 +6,7 @@ module.exports = {
           @import "@/assets/main.scss";
           @import "@/assets/variables.scss";
           @import "@/assets/success.scss";
+          @import "@/assets/media.scss";
         `
       }
     }

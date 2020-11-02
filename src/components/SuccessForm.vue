@@ -16,8 +16,7 @@ export default {
   name: 'SuccessForm',
   methods: {
     addClient: function(){
-      document.querySelector('.modal').classList.remove('show');
-      document.querySelector('.form-container').classList.remove('hide');
+      window.location.reload()
     }
   }
 }
@@ -25,4 +24,5 @@ export default {
 
 <style lang="scss">
   @import '@/assets/success.scss';
+  @import '@/assets/media.scss';
 </style>
