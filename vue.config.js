@@ -11,5 +11,5 @@ module.exports = {
       }
     }
   },
-  publicPath: '/vue_client_form/'
+  publicPath: '/clientform/'
 }
